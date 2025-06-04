@@ -17,11 +17,11 @@
    ```
    conda create -n exllama python=3.12
    conda activate exllama
-   git clone https://github.com/turboderp-org/exllamav2/tree/master
+   git clone https://github.com/turboderp-org/exllamav2
    cd exllamav2
    pip install -r requirements.txt
    <-----T4 only---->
-   conda install -c nvidia cudatoolkit-dev=12.6 -y
+   conda install nvidia::cuda-toolkit
    <-----T4 only---->
    pip install . --use-pep517 --no-build-isolation
    pip install datasets==3.5.0
