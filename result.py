@@ -117,7 +117,7 @@ def main():
     ### === TODO: Load your model (you may change this part) ===
     
     # Load ExLlama Q4 model
-    model_path = "/your_path/llama3.0bpw"
+    model_path = "./llama3.0bpw"
     print(f"Loading model from: {model_path}")
     
     config = ExLlamaV2Config(model_path)
