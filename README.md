@@ -1,4 +1,4 @@
-# 2025-NYCU-Edgeai-final
+# 2025-NYCU-Edgeai-Final
 
 
 ## 專案簡介
@@ -13,15 +13,34 @@
 
 ## 執行方式
 
-1. **安裝依賴套件**
+1. **環境設定**
    ```
-   pip install -r req.txt
+   conda create -n exllama python=3.12
+   conda activate exllama
+   git clone https://github.com/turboderp-org/exllamav2/tree/master
+   cd exllamav2
+   pip install -r requirements.txt
+   <-----T4 only---->
+   conda install -c nvidia cudatoolkit-dev=12.6 -y
+   <-----T4 only---->
+   pip install . --use-pep517 --no-build-isolation
+   pip install datasets==3.5.0
    ```
 
 2. **準備模型**
    - 先前往https://huggingface.co/wei123602/exllama-Llama-3.2-3B-Instruct-3.0bpw 下載 ExLlamaV2 Q4 量化模型。
    - 將 ExLlamaV2 Q4 量化模型放置於 `/your_path/llama3.0bpw` 目錄下，或依需求修改 `result.py` 內的 `model_path`。
 
+   或是自行量化模型
+
+   ```
+   cd exllamav2
+   python convert.py \
+       -i  /root/Sherry/EdgeAI/final/1w/llama-3.2-3b-instruct \
+       -o  /root/Sherry/EdgeAI/final/1w/tmp \
+       -cf /root/Sherry/EdgeAI/final/1w/llama3.0bpw/ \
+       -b 3.0
+   ```
 3. **執行主程式**
    ```
    python result.py
