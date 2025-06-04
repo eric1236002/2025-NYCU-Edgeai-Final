@@ -1,6 +1,5 @@
-# 2025-edgeai-final
+# 2025-NYCU-Edgeai-final
 
-# 2025-edgeai-final
 
 ## 專案簡介
 本專案為 Edge AI 期末專案，主要目的是載入 ExLlamaV2 模型，並進行文本生成、推論效能測試（Throughput）、以及困惑度（Perplexity, PPL）評估。
